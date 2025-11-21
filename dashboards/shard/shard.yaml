@@ -13695,7 +13695,7 @@ views:
       , upper(split_part(json_extract_scalar(detail, '$.findings[0].resources[0].id'), ':', 3)) Finding_Service
       , json_format(json_extract(detail, '$.findings[0].resources[0].details')) resource_keyname
       FROM
-        "cid_security_hub5"."securityhub_events"
+        "cid_security_hub"."securityhub_events"
       WHERE (date_parse(datehour, '%Y/%m/%d') >= date_add('month', -3, current_date))
 schedules:
   incremental-daily:
